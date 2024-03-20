@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Soal 4 - Logika Dasar</title>
+</head>
+<body>
+	<h2>Fungsi 1</h2>
+	<p>Jumlah Bilangan</p>
+	<input type="number" id="jumBil"><br>
+	<p>Jumlah Kelompok</p>
+	<input type="number" id="jumKel"><br><br>
+	<button onclick="myFunction()">Run</button>
+
+	<p id="hasil"></p>
+
+	<script>
+		function myFunction() {
+		    var jumlahBilangan = parseInt(document.getElementById("jumBil").value);
+		    var jumlahKelompok = parseInt(document.getElementById("jumKel").value);
+		    
+		    if (jumlahBilangan <= 0 || jumlahKelompok <= 0) {
+		        document.getElementById("hasil").innerText = "Jumlah bilangan atau jumlah kelompok harus lebih besar dari 0";
+		        return;
+		    }
+
+		    var bilanganGenap = [];
+		    for (var i = 1; i <= jumlahBilangan; i++) {
+		        bilanganGenap.push(2 * i);
+		    }
+
+		    var hasilKelompok = [];
+		    if (jumlahBilangan % jumlahKelompok === 0) {
+		        var ukuranKelompok = jumlahBilangan / jumlahKelompok;
+		        for (var i = 0; i < jumlahBilangan; i += ukuranKelompok) {
+		            hasilKelompok.push(bilanganGenap.slice(i, i + ukuranKelompok));
+		        }
+		    } else {
+		        var sisa = jumlahBilangan % jumlahKelompok;
+		        var ukuranKelompokKecil = Math.floor(jumlahBilangan / jumlahKelompok);
+		        var ukuranKelompokBesar = ukuranKelompokKecil + 1;
+		        var bilanganDalamKelompokKecil = (jumlahKelompok - sisa) * ukuranKelompokKecil;
+
+		        var idx = 0;
+		        while (idx < bilanganDalamKelompokKecil) {
+		            hasilKelompok.push(bilanganGenap.slice(idx, idx + ukuranKelompokKecil));
+		            idx += ukuranKelompokKecil;
+		        }
+
+		        while (idx < jumlahBilangan) {
+		            hasilKelompok.push(bilanganGenap.slice(idx, idx + ukuranKelompokBesar));
+		            idx += ukuranKelompokBesar;
+		        }
+		    }
+
+		    // Menampilkan hasil dalam bentuk teks
+		    var hasilTeks = "";
+		    for (var i = 0; i < hasilKelompok.length; i++) {
+		        hasilTeks += "[ " + hasilKelompok[i].join(", ") + " ] ";
+		    }
+		    document.getElementById("hasil").innerText = hasilTeks;
+		}
+</script>
+</body>
+</html>

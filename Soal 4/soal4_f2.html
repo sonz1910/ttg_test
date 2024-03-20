@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Soal 4 - Logika Dasar</title>
+</head>
+<body>
+	<h2>Fungsi 2</h2>
+	<p>Jumlah Baris</p>
+	<input type="number" id="baris"><br><br>
+	<button onclick="myFunction()">Run</button><br>
+	
+	
+	<p id="hasil"></p>
+
+	<script>
+		function myFunction(){
+			var jum = document.getElementById('baris').value;
+			let str = '';
+
+			for(var i=jum;i>0;i--){
+				for(var j=0;j<i*2-1;j++){
+					str+="* ";
+				}
+				str += "<br>";
+			}
+			
+			document.getElementById("hasil").innerHTML = str;
+		}
+		
+	</script>
+</body>
+</html>
