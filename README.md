@@ -1,0 +1,3 @@
+Cara penggunaan :
+1. Untuk Soal 2 adalah sebuah aplikasi Stopwatch menggunakan Flutter. Bisa menggunakan vscode untuk membuat aplikasi Flutter terlebih dahulu lalu replace folder lib yang ada pada folder Soal 2 ke aplikasi Flutter yang dibuat. Begitu pula dengan file pubspec.yaml
+2. Untuk Soal 3 adalah sebuah aplikasi Frontend Backend menggunakan Flutter. Untuk Backend menggunakan Node.js, bisa install node js terlebih dahulu dan masukkan file server.js ke dalamnya. Untuk Frontend menggunakan vscode silahkan buat aplikasi Flutter terlebih dahulu lalu replace folder lib yang ada pada folder Soal 3 ke aplikasi Flutter yang dibuat. Begitu pula dengan file pubspec.yaml
